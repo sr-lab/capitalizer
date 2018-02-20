@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Capitalizer.Shared;
+using System.Linq;
 
 namespace Capitalizer.Mapper
 {
@@ -39,7 +40,7 @@ namespace Capitalizer.Mapper
                 var stripped = StripNonLetters(line);
                 for (int j = 0; j < stripped.Length; j++)
                 {
-                    if (Char.IsUpper(stripped[j]))
+                    if (char.IsUpper(stripped[j]))
                     {
                         // Increment entry in capital letter heatmap.
                         if (!dict.ContainsKey(j))
@@ -50,6 +51,11 @@ namespace Capitalizer.Mapper
                     }
                 }
             }
+
+            // Print out total.
+            var totalCount = lines.Count(x => x.Any(y => char.IsUpper(y)));
+            Console.WriteLine($"A total of {totalCount}/{lines.Count()} container uppercase" +
+                $" characters ({(totalCount/lines.Count())*100}%).");
 
             // Add keys (indices) to list.
             var indices = new List<int>();
