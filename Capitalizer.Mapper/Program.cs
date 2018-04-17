@@ -32,6 +32,9 @@ namespace Capitalizer.Mapper
             // Read in entire file.
             var lines = FileUtils.ReadFileAsLines(args[0]);
 
+            // Should we go from the end instead?
+            var fromEnd = args.Length > 1 && args[1] == "-r";
+
             // Build an uppercase letter 'heatmap' by index of occurence.
             var dict = new SortedDictionary<int, int>();
             foreach (var line in lines)
@@ -40,7 +43,8 @@ namespace Capitalizer.Mapper
                 var stripped = StripNonLetters(line);
                 for (int j = 0; j < stripped.Length; j++)
                 {
-                    if (char.IsUpper(stripped[j]))
+                    var k = fromEnd ? stripped.Length - 1 - j : j;
+                    if (char.IsUpper(stripped[k]))
                     {
                         // Increment entry in capital letter heatmap.
                         if (!dict.ContainsKey(j))
@@ -54,7 +58,7 @@ namespace Capitalizer.Mapper
 
             // Print out total.
             var totalCount = lines.Count(x => x.Any(y => char.IsUpper(y)));
-            Console.WriteLine($"A total of {totalCount}/{lines.Count()} container uppercase" +
+            Console.WriteLine($"A total of {totalCount}/{lines.Count()} contain uppercase" +
                 $" characters ({(totalCount/lines.Count())*100}%).");
 
             // Add keys (indices) to list.
