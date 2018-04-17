@@ -48,5 +48,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capitalizer.Shared\Capitalizer.Shared.csproj">
+      <Project>{cf1b95e0-50d7-4e78-9f2f-8034ccbf3cdb}</Project>
+      <Name>Capitalizer.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

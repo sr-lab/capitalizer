@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitalizer.Mapper", "Capit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitalizer.Shared", "Capitalizer.Shared\Capitalizer.Shared.csproj", "{CF1B95E0-50D7-4E78-9F2F-8034CCBF3CDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Capitalizer.SymbolMapper", "Capitalizer.SymbolMapper\Capitalizer.SymbolMapper.csproj", "{343B096A-04BF-4EE3-9AEA-54F161192FF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CF1B95E0-50D7-4E78-9F2F-8034CCBF3CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF1B95E0-50D7-4E78-9F2F-8034CCBF3CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF1B95E0-50D7-4E78-9F2F-8034CCBF3CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{343B096A-04BF-4EE3-9AEA-54F161192FF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{343B096A-04BF-4EE3-9AEA-54F161192FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{343B096A-04BF-4EE3-9AEA-54F161192FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{343B096A-04BF-4EE3-9AEA-54F161192FF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
