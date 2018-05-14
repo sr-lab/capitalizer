@@ -1,7 +1,7 @@
 # Capitalizer
 Capital letter (and symbol) heat-mapper and password capitalisation utility. This repo is a bit of a mix, and contains several projects.
 
-## Capitalizer
+## Capitalisation Utility
 Very very simple little utility that will capitalise the first occurrence of any letter on each line of a given input file. This can be useful if, for example, you're using a password cracking algorithm that doesn't support capital letters such as [the original implementation of PCFGs for password cracking](https://sites.google.com/site/reusablesec/Home/password-cracking-tools/probablistic_cracker) by Matt Weir et al.
 
 ```
