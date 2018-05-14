@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 using Capitalizer.Shared;
-using System.Linq;
 
 namespace Capitalizer.SymbolMapper
 {
@@ -20,6 +21,13 @@ namespace Capitalizer.SymbolMapper
 
         static void Main(string[] args)
         {
+            // Check file exists.
+            if (!File.Exists(args[0]))
+            {
+                Console.WriteLine("Could not read input file.");
+                return;
+            }
+
             // Read in entire file.
             var lines = FileUtils.ReadFileAsLines(args[0]);
 
