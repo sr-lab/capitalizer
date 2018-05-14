@@ -41,14 +41,15 @@ namespace Capitalizer.Mapper
             var lines = FileUtils.ReadFileAsLines(args[0]);
 
             // Should we go from the end instead?
-            var fromEnd = args.Length > 1 && args[1] == "-r";
+            var fromEnd = args.Contains("-r");
+            var stripNonLetters = args.Contains("-s");
 
             // Build an uppercase letter 'heatmap' by index of occurence.
             var dict = new SortedDictionary<int, int>();
             foreach (var line in lines)
             {
-                // Strip all non-letters from string.
-                var stripped = StripNonLetters(line);
+                // Strip all non-letters from string, if specified.
+                var stripped = stripNonLetters ? StripNonLetters(line) : line;
                 for (int j = 0; j < stripped.Length; j++)
                 {
                     var k = fromEnd ? stripped.Length - 1 - j : j;
