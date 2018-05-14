@@ -30,15 +30,25 @@ namespace Capitalizer.Mapper
 
         static void Main(string[] args)
         {
-            // Check file exists.
-            if (!File.Exists(args[0]))
+            // Print usage.
+            if (args.Length < 1)
             {
-                Console.WriteLine("Could not read input file.");
+                Console.WriteLine("Usage: Capitalizer.Mapper <input_file> [-r] [-s]");
+                Console.WriteLine("[-r] Optional (default off). Map from end instead of beginning.");
+                Console.WriteLine("[-s] Optional (default off). Strip non-letters before mapping.");
+                return;
+            }
+
+            // Check file exists.
+            var path = args[0];
+            if (!File.Exists(path))
+            {
+                Console.WriteLine($"Could not read input file '{path}'.");
                 return;
             }
 
             // Read in entire file.
-            var lines = FileUtils.ReadFileAsLines(args[0]);
+            var lines = FileUtils.ReadFileAsLines(path);
 
             // Should we go from the end instead?
             var fromEnd = args.Contains("-r");

@@ -10,15 +10,23 @@ namespace Capitalizer
     {
         static void Main(string[] args)
         {
-            // Check file exists.
-            if (!File.Exists(args[0]))
+            // Print usage.
+            if (args.Length < 1)
             {
-                Console.WriteLine("Could not read input file.");
+                Console.WriteLine("Usage: Capitalizer <input_file>");
+                return;
+            }
+            
+            // Check file exists.
+            var path = args[0];
+            if (!File.Exists(path))
+            {
+                Console.WriteLine($"Could not read input file '{path}'.");
                 return;
             }
 
             // Read in entire file.
-            var lines = FileUtils.ReadFileAsLines(args[0]);
+            var lines = FileUtils.ReadFileAsLines(path);
 
             // For each line in the file.
             var output = new List<string>();
